@@ -28,151 +28,362 @@ src="https://www.facebook.com/tr?id=2161620511454912&ev=PageView&noscript=1"/>
 
 
 <style>
-/* Pure content ko center mein laane ke liye wrapper */
-.sio-main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 20px;
+
+/* ===== MOBILE + DESKTOP RESPONSIVE RESET ===== */
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+}
+
+.sio-main-container{
+  width:100%;
+  max-width:100%;
+  min-height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px 15px;
+  overflow:hidden;
 }
 
 .sio-landing-wrap{
-  max-width: 550px; 
-  width: 100%;
-  font-family: Poppins, system-ui, sans-serif;
-  text-align: center;
+  width:100%;
+  max-width:550px;
+  margin:0 auto;
+  font-family:Poppins, system-ui, sans-serif;
+  text-align:center;
 }
 
-/* Pulse Effect Animation */
-@keyframes pulse-blue {
-  0% { box-shadow: 0 0 0 0 rgba(11, 110, 184, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(11, 110, 184, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(11, 110, 184, 0); }
+
+/* ===== BUTTON PULSE ===== */
+@keyframes pulse-blue{
+  0%{
+    box-shadow:0 0 0 0 rgba(11,110,184,0.7);
+  }
+
+  70%{
+    box-shadow:0 0 0 15px rgba(11,110,184,0);
+  }
+
+  100%{
+    box-shadow:0 0 0 0 rgba(11,110,184,0);
+  }
 }
 
+
+/* ===== TELEGRAM BUTTON ===== */
 .sio-btn{
-  display: block;
-  background: #0b6eb8;
-  color: #fff;
-  padding: 18px 10px;
-  font-size: 16px; 
-  font-weight: 800;
-  border-radius: 50px; 
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  animation: pulse-blue 2s infinite;
-  border: none;
-  width: 100%; 
-  box-sizing: border-box;
-  margin: 10px 0;
+  display:block;
+  width:100%;
+  max-width:100%;
+  background:#0b6eb8;
+  color:#fff;
+  padding:18px 12px;
+  font-size:16px;
+  line-height:1.3;
+  font-weight:800;
+  border-radius:50px;
+  text-align:center;
+  text-decoration:none;
+  transition:all 0.3s ease;
+  white-space:normal;
+  overflow-wrap:break-word;
+  animation:pulse-blue 2s infinite;
+  border:none;
+  margin:10px 0;
 }
 
 .sio-btn:hover{
-  background: #095c9d;
-  transform: scale(1.02);
+  background:#095c9d;
+  transform:scale(1.02);
 }
 
+
+/* ===== PROFILE ===== */
 .sio-profile{
-  margin: 15px 0;
+  width:100%;
+  margin:15px 0;
 }
 
 .sio-avatar{
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  width:110px;
+  height:110px;
+  max-width:110px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 auto;
+  border:4px solid #fff;
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
 }
 
 .sio-avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .sio-headline{
-  color: #18c13d;
-  font-size: 26px;
-  font-weight: 800;
-  margin: 10px 0;
-  text-align: center;
+  width:100%;
+  color:#18c13d;
+  font-size:26px;
+  line-height:1.2;
+  font-weight:800;
+  margin:10px 0;
+  text-align:center;
+  overflow-wrap:break-word;
 }
 
+
+/* ===== FEATURES ===== */
 .sio-features{
-  margin: 0 auto;
-  padding: 5px 0;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  width:100%;
+  max-width:100%;
+  margin:0 auto;
+  padding:5px 0;
+  font-size:15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .sio-feature{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  margin: 5px 0;
-  width: 100%;
+  width:100%;
+  max-width:100%;
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  justify-content:center;
+  margin:6px 0;
 }
 
-.sio-feature p {
-  margin: 0;
-  font-weight: 600;
-  white-space: nowrap;
-  text-align: center;
+.sio-feature p{
+  flex:1;
+  min-width:0;
+  margin:0;
+  font-weight:600;
+  white-space:normal;
+  text-align:left;
+  line-height:1.4;
+  overflow-wrap:break-word;
+  word-break:normal;
 }
 
 .sio-tick{
-  min-width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #eaf7ea;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: #18c13d;
-  font-size: 14px;
+  flex:0 0 24px;
+  width:24px;
+  min-width:24px;
+  height:24px;
+  border-radius:50%;
+  background:#eaf7ea;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#18c13d;
+  font-size:14px;
 }
 
+
+/* ===== FREE TEXT ===== */
+.sio-free-text{
+  width:100%;
+  margin:15px 0;
+  font-weight:800;
+  color:#0b6eb8;
+  font-size:16px;
+  line-height:1.3;
+  text-align:center;
+}
+
+
+/* ===== DISCLAIMER ===== */
 .sio-disclaimer{
-  margin-top: 25px;
-  font-size: 11px;
-  color: #777;
-  line-height: 1.4;
-  text-align: center;
+  width:100%;
+  margin-top:25px;
+  padding:0 5px;
+  font-size:11px;
+  color:#777;
+  line-height:1.5;
+  text-align:center;
+  overflow-wrap:break-word;
 }
 
-@media (max-width:480px){
+
+/* ===== ADB AGENCY ===== */
+.adb-agency-box{
+  width:calc(100% - 30px);
+  max-width:550px;
+  margin:5px auto 20px;
+  padding:10px 15px;
+  border-radius:12px;
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+  font-size:13px;
+  line-height:1.4;
+  white-space:normal;
+  overflow-wrap:break-word;
+  box-shadow:0 4px 15px rgba(0,0,0,0.2);
+  border:1px solid rgba(255,255,255,0.2);
+  background:linear-gradient(
+    90deg,
+    #4f46e5,
+    #9333ea,
+    #ec4899
+  );
+}
+
+.adb-agency-box a{
+  color:#4da6ff;
+  text-decoration:none;
+  font-weight:800;
+  text-shadow:0 0 8px #4da6ff;
+}
+
+
+/* ===== MOBILE ===== */
+@media screen and (max-width:480px){
+
+  .sio-main-container{
+    min-height:auto;
+    padding:15px 12px;
+    align-items:flex-start;
+  }
+
+  .sio-landing-wrap{
+    width:100%;
+    max-width:100%;
+  }
+
   .sio-btn{
-    font-size: 14px;
-    padding: 15px 5px;
+    width:100%;
+    padding:15px 10px;
+    font-size:14px;
+    line-height:1.35;
+    border-radius:45px;
+    margin:9px 0;
+  }
+
+  .sio-profile{
+    margin:13px 0;
+  }
+
+  .sio-avatar{
+    width:95px;
+    height:95px;
   }
 
   .sio-headline{
-    font-size: 22px
+    font-size:22px;
+    margin:9px 0;
+  }
+
+  .sio-features{
+    padding:3px 0;
+    font-size:13px;
+  }
+
+  .sio-feature{
+    gap:8px;
+    margin:5px 0;
+    align-items:flex-start;
   }
 
   .sio-feature p{
-    font-size: 12px
+    font-size:12px;
+    line-height:1.35;
+  }
+
+  .sio-tick{
+    flex:0 0 22px;
+    width:22px;
+    min-width:22px;
+    height:22px;
+    font-size:12px;
+  }
+
+  .sio-free-text{
+    margin:13px 0;
+    font-size:15px;
+  }
+
+  .sio-disclaimer{
+    margin-top:20px;
+    font-size:10px;
+    line-height:1.45;
+  }
+
+  .adb-agency-box{
+    width:calc(100% - 24px);
+    margin:5px auto 15px;
+    padding:9px 10px;
+    font-size:12px;
+    line-height:1.4;
   }
 }
+
+
+/* ===== VERY SMALL MOBILE ===== */
+@media screen and (max-width:360px){
+
+  .sio-main-container{
+    padding:12px 9px;
+  }
+
+  .sio-btn{
+    font-size:13px;
+    padding:14px 8px;
+  }
+
+  .sio-avatar{
+    width:85px;
+    height:85px;
+  }
+
+  .sio-headline{
+    font-size:20px;
+  }
+
+  .sio-feature p{
+    font-size:11px;
+  }
+
+  .sio-free-text{
+    font-size:14px;
+  }
+
+  .sio-disclaimer{
+    font-size:9.5px;
+  }
+
+  .adb-agency-box{
+    width:calc(100% - 18px);
+    font-size:11px;
+  }
+}
+
 </style>
 
 
 <div class="sio-main-container">
+
   <div class="sio-landing-wrap">
 
+
     <!-- TELEGRAM BUTTON 1 -->
-    <a 
-      class="sio-btn" 
+    <a
+      class="sio-btn"
       href="https://t.me/+Vq8Delq-10E5OTM1"
       target="_blank"
       rel="noopener noreferrer"
@@ -182,9 +393,11 @@ src="https://www.facebook.com/tr?id=2161620511454912&ev=PageView&noscript=1"/>
     </a>
 
 
+    <!-- PROFILE -->
     <div class="sio-profile">
+
       <div class="sio-avatar">
-        <img 
+        <img
           src="https://i.ibb.co/WpnJL9Pv/l3et-M0at-Dy-Ph-Rto-Z7gkj-OZ78ksoecyo-SHh-Syxr-VZwaa-GEt-UE-ldm-Nv-C7u-RC-Ukl-PUy-BNg0f-MF0-NEXO9fw-A.jpg"
           alt="Trade With Sunil Logo"
         >
@@ -193,27 +406,36 @@ src="https://www.facebook.com/tr?id=2161620511454912&ev=PageView&noscript=1"/>
       <div class="sio-headline">
         TRADER GUPTA
       </div>
+
     </div>
 
 
+    <!-- FEATURES -->
     <div class="sio-features">
 
       <div class="sio-feature">
         <div class="sio-tick">✓</div>
-        <p>Nifty, BankNifty & Options calls with 90% accuracy</p>
+        <p>
+          Nifty, BankNifty & Options calls with 90% accuracy
+        </p>
       </div>
 
       <div class="sio-feature">
         <div class="sio-tick">✓</div>
-        <p>1-4 Risk Reward Ratio • Daily 2-3 calls</p>
+        <p>
+          1-4 Risk Reward Ratio • Daily 2-3 calls
+        </p>
       </div>
 
       <div class="sio-feature">
         <div class="sio-tick">✓</div>
-        <p>Target 100+ Points Daily • Most Trusted Channel</p>
+        <p>
+          Target 100+ Points Daily • Most Trusted Channel
+        </p>
       </div>
 
-      <div style="margin: 15px 0; font-weight: 800; color: #0b6eb8; font-size: 16px;">
+
+      <div class="sio-free-text">
         Join Today For FREE! 🚀
       </div>
 
@@ -221,8 +443,8 @@ src="https://www.facebook.com/tr?id=2161620511454912&ev=PageView&noscript=1"/>
 
 
     <!-- TELEGRAM BUTTON 2 -->
-    <a 
-      class="sio-btn" 
+    <a
+      class="sio-btn"
       href="https://t.me/+Vq8Delq-10E5OTM1"
       target="_blank"
       rel="noopener noreferrer"
@@ -232,52 +454,40 @@ src="https://www.facebook.com/tr?id=2161620511454912&ev=PageView&noscript=1"/>
     </a>
 
 
+    <!-- DISCLAIMER -->
     <div class="sio-disclaimer">
       <b style="color:#0a7a3a">Disclaimer:</b>
       Educational content only. Not SEBI registered. Trading involves risk.
     </div>
 
+
   </div>
+
 </div>
 
 
-<!-- ADB AGENCY BUTTON - NO SUBSCRIBE TRACKING -->
-<div style="
-background:linear-gradient(90deg,#4f46e5,#9333ea,#ec4899);
-padding:10px 15px;
-border-radius:12px;
-text-align:center;
-font-family:'Poppins',sans-serif;
-color:#fff;
-font-size:13px;
-white-space:nowrap;
-box-shadow:0 4px 15px rgba(0,0,0,0.2);
-display:inline-block;
-border:1px solid rgba(255,255,255,0.2);
-">
-🔥 Ads by 
+<!-- ADB AGENCY -->
+<div class="adb-agency-box">
 
-<a 
-  href="https://t.me/+zu4i4Qi8Gno1ZDE9"
-  style="
-  color:#4da6ff;
-  text-decoration:none;
-  font-weight:800;
-  text-shadow:0 0 8px #4da6ff;
-  "
->
-ADBAGENCY
-</a>
+  🔥 Ads by
 
-• Boost Your Reach 🚀
+  <a
+    href="https://t.me/+zu4i4Qi8Gno1ZDE9"
+  >
+    ADBAGENCY
+  </a>
+
+  • Boost Your Reach 🚀
+
 </div>
 
 
 <!-- ============ TELEGRAM SUBSCRIBE TRACKING ============ -->
 <script>
-function trackTelegramSubscribe(event) {
 
-  if (typeof fbq === 'function') {
+function trackTelegramSubscribe(event){
+
+  if(typeof fbq === 'function'){
 
     fbq('track', 'Subscribe', {
       value: 1.00,
@@ -287,6 +497,8 @@ function trackTelegramSubscribe(event) {
   }
 
   /* Telegram link normal tarike se open hoga */
+
 }
+
 </script>
 <!-- ========== END TELEGRAM TRACKING ========== -->
